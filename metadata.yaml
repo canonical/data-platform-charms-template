@@ -1,20 +1,19 @@
 # Copyright 2024 Canonical Ltd.
 # See LICENSE file for licensing details.
-name: mongos-k8s
-display-name: mongos-k8s
+name: data-k8s
+display-name: data-k8s
 description: |
-  mongos is a router/proxy used for sharded MongoDB clusters. This charm
-  deploys and operates mongos as a charm on K8s.
-source: https://github.com/canonical/mongos-k8s-operator
-issues: https://github.com/canonical/mongos-k8s-operator/issues
+  This charm deploys X and operates X as a charm on K8s.
+source: https://github.com/canonical/TODO-k8s-operator
+issues: https://github.com/canonical/TODO-k8s-operator/issues
 website:
-  - https://github.com/canonical/mongos-k8s-operator
+  - https://github.com/canonical/TODO-k8s-operator
   - https://chat.charmhub.io/charmhub/channels/data-platform
-summary: A mongos k8s operator charm
+summary: A TODO k8s operator charm
 
 peers:
   router-peers:
-    interface: mongos-peers
+    interface: TODO-peers
   upgrade-version-a:
     # Relation versioning scheme:
     # DA056 - Upgrading in-place upgrade protocol
@@ -25,26 +24,20 @@ requires:
   certificates:
     interface: tls-certificates
     limit: 1
-  cluster:
-    interface: config-server
-    limit: 1
 
 containers:
-  mongod:
-    resource: mongodb-image
+  todo:
+    resource: todo-image
     mounts:
-      - storage: mongodb
-        location: /var/lib/mongodb
+      - storage: todo
+        location: /var/lib/todo
 resources:
-  mongodb-image:
+  todo-image:
     type: oci-image
-    description: OCI image for mongodb
+    description: OCI image for todo
     # TODO: Update sha whenever upstream rock changes
     upstream-source: ghcr.io/canonical/charmed-mongodb:6.0.6-22.04_edge@sha256:b4b3edb805b20de471da57802643bfadbf979f112d738bc540ab148d145ddcfe
 storage:
-  mongodb:
+  todo:
     type: filesystem
-    location: /var/lib/mongodb
-  mongodb-logs:
-    type: filesystem
-    location: /var/log/mongodb
+    location: /var/lib/todo

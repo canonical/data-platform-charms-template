@@ -7,7 +7,7 @@ this operator.
 
 - Generally, before developing enhancements to this charm, you should consider
   [opening an issue
-  ](https://github.com/canonical/mongos-k8s-operator/issues) explaining
+  ](https://github.com/canonical/TODO/issues) explaining
   your use case.
 - If you would like to chat with us about your use-cases or proposed
   implementation, you can reach us at [Canonical Mattermost public
@@ -68,12 +68,13 @@ juju add-model dev
 juju model-config logging-config="<root>=INFO;unit=DEBUG"
 # Deploy the charm
 # `--trust` needed if Role Based Access Control (RBAC) (https://kubernetes.io/docs/concepts/security/rbac-good-practices/) is enabled on Kubernetes
-juju deploy ./mongos-k8s-operator_ubuntu-20.04-amd64.charm \
-    --resource ghcr.io/canonical/charmed-mongodb:6.0.6-22.04_edge@sha256:b4b3edb805b20de471da57802643bfadbf979f112d738bc540ab148d145ddcfe --trust
+
+juju deploy ./*.charm \
+    --resource ghcr.io/canonical/<TODO> --trust
 ```
 
 ## Canonical Contributor Agreement
 
-Canonical welcomes contributions to the Charmed MySQL-Router Operator. Please
+Canonical welcomes contributions to the Charmed TODO Operator. Please
 check out our [contributor agreement](https://ubuntu.com/legal/contributors) if
 you're interested in contributing to the solution.
