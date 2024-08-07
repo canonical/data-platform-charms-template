@@ -1,0 +1,27 @@
+# Copyright 2024 Canonical Ltd.
+# See LICENSE file for licensing details.
+
+type: charm
+bases:
+  - name: ubuntu
+    channel: "22.04"
+    architectures: [amd64]
+parts:
+  charm:
+    override-pull: |
+      craftctl default
+      if [[ ! -f requirements.txt ]]
+      then
+          echo 'ERROR: Use "tox run -e build-dev" instead of calling "charmcraft pack" directly' >&2
+          exit 1
+      fi
+    override-build: |
+      rustup default stable
+      craftctl default
+    charm-strict-dependencies: true
+    build-snaps:
+      - rustup
+    build-packages:
+      - libffi-dev
+      - libssl-dev
+      - pkg-config
