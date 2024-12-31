@@ -7,13 +7,13 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
-ops = "^2.15.0"
-tenacity = "^8.2.3"
-pyyaml = "^6.0.1"
+ops = "^2.17.1"
+tenacity = "^8.5.0"
+pyyaml = "^6.0.2"
 jinja2 = "^3.1.3"
-data-platform-helpers = "^0.1.2"
+data-platform-helpers = "^0.1.4"
 # FIXME: Unpin once rustc 1.76 is available at build time
-rpds-py = "<0.19"
+rpds-py = "<0.23"
 
 [tool.poetry.group.charm-libs.dependencies]
 # data_platform_libs/v0/data_interfaces.py
@@ -27,31 +27,31 @@ cosl = "^0.0.16"  # loki_push_api
 optional = true
 
 [tool.poetry.group.format.dependencies]
-ruff = "^0.4.5"
+ruff = "^0.8.4"
 
 [tool.poetry.group.lint]
 optional = true
 
 [tool.poetry.group.lint.dependencies]
-ruff = "^0.4.5"
-codespell = "^2.2.6"
+ruff = "^0.8.4"
+codespell = "^2.3.0"
 shellcheck-py = "^0.10.0.1"
 
 [tool.poetry.group.unit.dependencies]
-coverage = {extras = ["toml"], version = "^7.5.0"}
-pytest = "^8.1.1"
+coverage = {extras = ["toml"], version = "^7.6.10"}
+pytest = "^8.3.4"
 parameterized = "^0.9.0"
 
 [tool.poetry.group.integration.dependencies]
 allure-pytest = "^2.13.5"
-tenacity = "^8.2.3"
+tenacity = "^8.5.0"
 parameterized = "^0.9.0"
-lightkube = "^0.15.3"
+lightkube = "^0.16.2"
 kubernetes = "^30.1.0"
 juju = "^3.4.0"
-pytest = "^8.1.1"
+pytest = "^8.3.4"
 pytest-mock = "^3.14.0"
-pytest-operator = "^0.34.0"
+pytest-operator = "^0.39.0"
 pytest-operator-cache = {git = "https://github.com/canonical/data-platform-workflows", tag = "v16.7.0", subdirectory = "python/pytest_plugins/pytest_operator_cache"}
 pytest-operator-groups = {git = "https://github.com/canonical/data-platform-workflows", tag = "v16.7.0", subdirectory = "python/pytest_plugins/pytest_operator_groups"}
 pytest-github-secrets = {git = "https://github.com/canonical/data-platform-workflows", tag = "v16.7.0", subdirectory = "python/pytest_plugins/github_secrets"}
